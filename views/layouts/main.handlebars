@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Test 1</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <img id="background" src="/assets/pexels-tbee-82256.jpg">
+  <div class="">
+    <header class="">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <h1 class="title">⚜️Brand</h1>
+        </div>
+        <div class="navbar-menu is-active">
+          <a class="navbar-item" href="/">Home</a>
+          <a class="navbar-item" href="/dashboard">Dashboard</a>
+          <div class="navbar-end">
+            {{#if logged_in}}
+            <script src="/logout.js" defer></script>
+            <a class="navbar-item"><button class="button" id="logout">Logout</button></a>
+            {{else}}
+            <a class="navbar-item" href="/signup" id="signup">Sign Up</a>
+            <a class="navbar-item" href="/login" id="login">Login</a>
+            {{/if}}
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">{{{ body }}}</main>
+  </div>
+</body>
+
+</html>
